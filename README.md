@@ -41,7 +41,7 @@ When you change the dino model you also need to change the embedding dimensional
 
 ## 📦 Dataset
 
-You can use the dataset directly with the [Huggingface `datasets`](https://huggingface.co/docs/datasets) library:
+You can use the dataset directly with the [Huggingface](https://huggingface.co/docs/datasets) datasets library:
 
 ```python
 from datasets import load_dataset
