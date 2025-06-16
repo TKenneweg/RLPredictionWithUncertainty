@@ -1,7 +1,7 @@
 # Remaining Lifespan Prediction from Images with Uncertainty Estimation
 
 This repository contains the code for the paper
-**"Remaining Lifespan Prediction from Images with Uncertainty Estimation"**.
+**"Uncertainty-Aware Remaining Lifespan Prediction from Images"**.
 
 📄 **[Original Paper (TODO: Add Link)](TODO)**
 
@@ -35,6 +35,8 @@ python main.py
 **Note:**
 The first time you run the script, the dataset will be downloaded from Huggingface. Depending on your internet connection, this may take some time.
 
+When you change the dino model you also need to change the embedding dimensionality. Look at [DINOv2](https://github.com/facebookresearch/dinov2)
+
 ---
 
 ## 📦 Dataset
@@ -60,7 +62,7 @@ If you use this code or dataset, please cite our paper:
 
 ```bibtex
 @article{TODO,
-  title={Remaining Lifespan Prediction from Images with Uncertainty Estimation},
+  title={Uncertainty-Aware Remaining Lifespan Prediction from Images},
   author={Kenneweg, Tristan and ...},
   journal={TODO},
   year={2025},
@@ -70,16 +72,11 @@ If you use this code or dataset, please cite our paper:
 
 ---
 
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
----
 
 ## 📧 Contact
 
 For questions or collaborations, please contact
-Tristan Kenneweg — \[Your Email or GitHub Profile]
+Tristan Kenneweg — \[tkenneweg@techfak.uni-bielefeld.de]
 
 ---
 

@@ -46,6 +46,7 @@ class DinoRegressionHeteroImages(nn.Module):
 # Standard image transform
 imgtransform = transforms.Compose([
     transforms.Resize((224, 224)),
+    transforms.Lambda(lambda x: x.convert('RGB')),  # Ensure images are in RGB format
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406],
                          std=[0.229, 0.224, 0.225]),
@@ -95,12 +96,15 @@ if __name__ == "__main__":
         "N_EPOCHS": 10,
         "BASE_LR": 1e-4,
         "BS": 32,
-        "DINO_DIM": 1024,
         "HIDDEN": 128,
         "DROPOUT": 0.01,
         "WANDB": True,
         "REPO_ID": "TristanKE/RemainingLifespanPredictionFaces",
         # "REPO_ID": "TristanKE/RemainingLifespanPredictionWholeImgs",
+        "DINO_MODEL": "dinov2_vitl14_reg",
+        # "DINO_MODEL": "dinov2_vitg14_reg", #the largest model, but also the slowest
+        "DINO_DIM": 1024,
+        # "DINO_DIM": 1536, #for the larger model
     }
 
     if cfg["WANDB"]:
@@ -120,7 +124,7 @@ if __name__ == "__main__":
 
     # Load the model and move it to the GPU
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    dino_backbone = torch.hub.load("facebookresearch/dinov2", "dinov2_vitl14_reg").to(device)
+    dino_backbone = torch.hub.load("facebookresearch/dinov2", cfg["DINO_MODEL"]).to(device)
     model = DinoRegressionHeteroImages(dino_backbone, hidden_dim=cfg["HIDDEN"], dropout=cfg["DROPOUT"], dino_dim=cfg["DINO_DIM"]).to(device)
 
     optimizer = optim.Adam(model.parameters(), lr=cfg["BASE_LR"])
