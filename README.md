@@ -1,4 +1,4 @@
-# Remaining Lifespan Prediction from Images with Uncertainty Estimation
+# The Paper
 
 This repository contains the code for the paper
 **"Uncertainty-Aware Remaining Lifespan Prediction from Images"**.
