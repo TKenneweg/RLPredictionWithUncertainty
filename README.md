@@ -3,7 +3,7 @@
 This repository contains the code for the paper
 **"Uncertainty-Aware Remaining Lifespan Prediction from Images"**.
 
-📄 **[Original Paper (TODO: Add Link)](TODO)**
+📄 **[Original Paper](https://arxiv.org/abs/2506.13430)**
 
 ---
 
@@ -61,12 +61,14 @@ dataset = load_dataset("TristanKE/RemainingLifespanPredictionFaces", split="trai
 If you use this code or dataset, please cite our paper:
 
 ```bibtex
-@article{TODO,
-  title={Uncertainty-Aware Remaining Lifespan Prediction from Images},
-  author={Kenneweg, Tristan and ...},
-  journal={TODO},
-  year={2025},
-  url={TODO}
+@misc{kenneweg2025uncertaintyawareremaininglifespanprediction,
+      title={Uncertainty-Aware Remaining Lifespan Prediction from Images}, 
+      author={Tristan Kenneweg and Philip Kenneweg and Barbara Hammer},
+      year={2025},
+      eprint={2506.13430},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2506.13430}, 
 }
 ```
 
